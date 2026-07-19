@@ -1,0 +1,46 @@
+name: validate
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate skill structure
+        run: |
+          set -e
+
+          if [ ! -f SKILL.md ]; then
+            echo "SKILL.md is missing"
+            exit 1
+          fi
+
+          name=$(grep -m1 '^name:' SKILL.md | sed 's/^name: *//')
+          description=$(grep -m1 '^description:' SKILL.md | sed 's/^description: *//')
+
+          if [ -z "$name" ]; then
+            echo "SKILL.md frontmatter is missing a non-empty name field"
+            exit 1
+          fi
+
+          if [ -z "$description" ]; then
+            echo "SKILL.md frontmatter is missing a non-empty description field"
+            exit 1
+          fi
+
+          dirname=$(basename "$(pwd)")
+          if [ "$name" != "$dirname" ]; then
+            echo "SKILL.md name ($name) does not match repo directory name ($dirname)"
+            exit 1
+          fi
+
+          if ! grep -q "SKILL.md" README.md; then
+            echo "README.md does not link to SKILL.md"
+            exit 1
+          fi
+
+          echo "All checks passed"
