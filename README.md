@@ -30,7 +30,7 @@ Explore three layout directions for a screen in plain text, compare them side by
 
 - Generates three distinct layout hypotheses for one screen, each a different answer to what value proposition the screen leads with.
 - Renders each hypothesis as a monospace ASCII wireframe, 60-80 characters wide and 8-20 lines tall, in a fenced code block that displays correctly in any chat or terminal.
-- Uses one fixed legend per response - buttons, inputs, checkboxes, icons, and active tabs always use the same symbols, so the variants are easy to compare.
+- Uses one fixed legend per response - buttons, inputs, checkboxes, radios, dropdowns, toggles, icons, list rows, overlays, and active tabs always use the same symbols, so the variants are easy to compare.
 - Asks exactly one clarifying question when the screen or its primary job is unclear, instead of guessing.
 - Caps output at five variants and states why: more options slow a decision down instead of speeding it up.
 - Skips citations and rationale in this phase on purpose - a wireframe is only useful while it stays cheap to throw away.
@@ -129,7 +129,8 @@ Which variant(s) should move forward?
 ## How it works
 
 - Every hypothesis has to be a different product decision, not a different visual treatment. Changing only color, spacing, or font between two variants makes them the same hypothesis twice.
-- A fixed ASCII legend - borders, buttons, inputs, checkboxes, icons, active-tab markers - stays identical across every variant in one response, so the eye compares structure instead of relearning symbols each time.
+- A fixed ASCII legend - borders, buttons, inputs, checkboxes, radios, dropdowns, toggles, icons, repeated list rows, overlays, active-tab markers - stays identical across every variant in one response, so the eye compares structure instead of relearning symbols each time.
+- A control the legend does not name borrows the nearest symbol it does and lets the label carry the meaning, rather than inventing a new symbol halfway down the sketch. Inconsistent symbols are what make a set of wireframes unreadable side by side.
 - The 60-80 character width and 8-20 line height are a guardrail, not a suggestion. That range fits inside a chat pane or terminal without wrapping, and it forces the sketch to leave out detail that belongs in a hi-fi mockup.
 - Mobile proportions (narrower, taller box, mirroring a 390x844 screen) are the default when no platform is stated.
 - The skill asks one clarifying question, never more, when a request under-specifies the screen or its primary job, instead of guessing.
@@ -150,6 +151,9 @@ Three is the default - enough to force genuinely different value propositions wi
 
 **Can Claude generate wireframes?**
 Yes. This skill has Claude produce monospace ASCII wireframes directly in a chat reply, using a fixed legend for buttons, inputs, and active states so output stays consistent across variants.
+
+**What symbols should an ASCII wireframe use?**
+This skill pins one legend: `+ - |` for borders, `[ Label ]` for a secondary button and `[[ Label ]]` for a primary one, `[.....]` for a text input, `[ ]` / `[x]` for checkboxes, `( )` / `(o)` for radios, `[ Label v ]` for a dropdown, `[o--]` / `[--o]` for a toggle, `(icon-name)` for icons, `[IMG: description]` for a photo region, `*asterisks*` around an active nav item, `...` for a row that repeats, `v v v` for content below the fold, and `=` borders for a modal above the page. When a screen needs something the legend does not name, the rule is to borrow the closest symbol and let the label say what it is - a date picker as `[ 12 Mar 2026 v ]` - rather than invent a symbol partway through, which is what makes a set of variants stop being comparable.
 
 **What is low-fidelity wireframing for AI agents?**
 A deliberately cheap, text-only sketching step that happens before any hi-fi mockup or code, so a team aligns on structure and value proposition first.

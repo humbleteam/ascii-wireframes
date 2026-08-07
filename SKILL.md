@@ -57,11 +57,17 @@ Use this legend consistently within one response, so the variants are easy to co
 - Primary or CTA button: `[[ Label ]]`
 - Text input: `[.....................]`
 - Checkbox unchecked / checked: `[ ]` / `[x]`
-- Icon: `(icon-name)`, for example `(search)`, `(bell)`, `(menu)`
+- Radio unselected / selected: `( )` / `(o)`
+- Dropdown or select: `[ Label v ]` - the trailing `v` is what separates it from a button
+- Toggle off / on: `[o--]` / `[--o]`
+- Icon: `(icon-name)`, for example `(search)`, `(bell)`, `(menu)` - an icon always carries a name inside the parentheses, which is how it stays distinct from a radio
 - Image or photo region: a bordered box labeled `[IMG: description]` in its center - a label is enough at this fidelity, never draw decorative characters to simulate a photo
 - Active nav or tab item: wrap the label in `*asterisks*`; inactive items stay plain
+- Repeated rows (a list, a table, a feed): draw two real rows, then one row holding `...`. Never draw ten rows to prove a list is long
+- Content continues below the fold: the last row inside the frame is `v v v`
+- Modal, sheet, or overlay above the page: a nested box whose horizontal borders use `=` instead of `-`, so the layer it sits on stays readable behind it
 
-Reuse the same legend across all variants in one response. Do not invent new symbols mid-response.
+Reuse the same legend across all variants in one response. Do not invent new symbols mid-response: when a screen needs a control this legend does not name, use the nearest symbol it does name and let the label carry the meaning - a date picker is `[ 12 Mar 2026 v ]`, a stepper is `[ - ] 3 [ + ]`. Add one plain line under the wireframe only when the borrowed symbol would otherwise be read as the wrong control.
 
 ## Sizing and platform defaults
 
@@ -78,6 +84,7 @@ Reuse the same legend across all variants in one response. Do not invent new sym
 | User asks for a citation, rationale, or "why" mid-sketch | Decline for this phase. Rationale belongs in a design review, once a direction is picked. |
 | User asks for HTML or code directly | Do not produce it here. Name html-mockup as the next step and stop. |
 | User attaches a screenshot instead of describing the screen | Treat the screenshot as the reference for the screen's content and layout, but still produce three hypotheses - do not just describe what is in the image. |
+| The screen needs a control the legend does not name | Borrow the nearest legend symbol and let the label do the work, per the legend's fallback rule. Never invent a symbol, and never drop the control from the sketch to avoid the problem - a missing control changes the layout being judged. |
 
 ## Notes for the agent
 
