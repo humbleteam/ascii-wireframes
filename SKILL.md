@@ -9,9 +9,13 @@ Explore layout directions cheaply, in text, before any pixels get pushed.
 
 ## Step 1 - scope the request
 
-If the request already names a screen and its primary job (example: "pricing page for a B2B analytics tool, primary job: convert a trial user to a paid plan"), go to Step 2.
+Two inputs open the gate: the **screen** and its **primary job**.
 
-If either the screen or its primary job is missing, ask exactly one clarifying question covering both. Do not guess and do not proceed on a partial brief.
+If the request already names both (example: "pricing page for a B2B analytics tool, primary job: convert a trial user to a paid plan"), go to Step 2.
+
+If either is missing, ask exactly one clarifying question, covering only what is actually missing - both when both are missing, the job alone when the screen is already settled. Do not guess and do not proceed on a partial brief.
+
+**An attached screenshot settles the screen, never the primary job.** It shows what is on the screen: the elements, the current layout, the content. It cannot show what the screen is for, and the job is what Step 2 needs to tell three hypotheses apart from three restyles - "lead with a recommended plan" and "lead with an ROI calculator" are only different answers if there is a question. So a screenshot arriving with no stated job still goes to the clarifying question, and that question asks about the job alone rather than about a screen the image already shows.
 
 ## Step 2 - decide three hypotheses
 
@@ -79,11 +83,12 @@ Reuse the same legend across all variants in one response. Do not invent new sym
 
 | Situation | Response |
 |---|---|
-| Request names no screen, or no primary job | Ask one clarifying question covering both. Never guess. |
+| Request names no screen, or no primary job | Ask one clarifying question, covering only what is missing. Never guess. |
 | User asks for more than 5 variants | Cap at 5. State the reason: more than five slows down comparison. |
 | User asks for a citation, rationale, or "why" mid-sketch | Decline for this phase. Rationale belongs in a design review, once a direction is picked. |
 | User asks for HTML or code directly | Do not produce it here. Name html-mockup as the next step and stop. |
-| User attaches a screenshot instead of describing the screen | Treat the screenshot as the reference for the screen's content and layout, but still produce three hypotheses - do not just describe what is in the image. |
+| User attaches a screenshot instead of describing the screen | The screenshot settles the screen, not its job. Job stated too - go to Step 2 and treat the image as the reference for the screen's content and layout. Job not stated - ask for it, in one question about the job alone. Either way the deliverable is three hypotheses, never a description of what is in the image. |
+| Screenshot attached and the job is stated as "redesign this" or "make it better" | That names an outcome, not a job. Ask which of 2-3 plausible jobs the screen is for, drawn from what the image shows, so the user picks instead of writing a brief. |
 | The screen needs a control the legend does not name | Borrow the nearest legend symbol and let the label do the work, per the legend's fallback rule. Never invent a symbol, and never drop the control from the sketch to avoid the problem - a missing control changes the layout being judged. |
 
 ## Notes for the agent

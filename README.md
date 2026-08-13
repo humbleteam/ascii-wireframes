@@ -31,7 +31,7 @@ Explore three layout directions for a screen in plain text, compare them side by
 - Generates three distinct layout hypotheses for one screen, each a different answer to what value proposition the screen leads with.
 - Renders each hypothesis as a monospace ASCII wireframe, 60-80 characters wide and 8-20 lines tall, in a fenced code block that displays correctly in any chat or terminal.
 - Uses one fixed legend per response - buttons, inputs, checkboxes, radios, dropdowns, toggles, icons, list rows, overlays, and active tabs always use the same symbols, so the variants are easy to compare.
-- Asks exactly one clarifying question when the screen or its primary job is unclear, instead of guessing.
+- Asks exactly one clarifying question when the screen or its primary job is unclear, instead of guessing - and asks only about the part that is actually missing.
 - Caps output at five variants and states why: more options slow a decision down instead of speeding it up.
 - Skips citations and rationale in this phase on purpose - a wireframe is only useful while it stays cheap to throw away.
 
@@ -58,6 +58,7 @@ Restart Claude Code after installing, then ask it what skills it has available, 
 - "Give me 3 layout directions for a pricing page for a B2B analytics tool." Returns three ASCII wireframes, each leading with a different pricing strategy: a single recommended plan, a feature-comparison table, and an ROI calculator.
 - "Sketch some options for a mobile onboarding flow before we open Figma." Defaults to mobile proportions and returns three onboarding structures: a guided tour, a self-seeding empty state, and a single setup question.
 - "I need 3 different hero section approaches for our marketing homepage." Asks one clarifying question first if the homepage's primary conversion goal is not stated, then renders three hero directions once it has an answer.
+- "Here's our current settings screen - sketch some options." (screenshot attached) Reads the screen off the image, asks the one question the image cannot answer - what the screen is for - then returns three hypotheses against that job.
 
 ## Example output
 
@@ -133,7 +134,8 @@ Which variant(s) should move forward?
 - A control the legend does not name borrows the nearest symbol it does and lets the label carry the meaning, rather than inventing a new symbol halfway down the sketch. Inconsistent symbols are what make a set of wireframes unreadable side by side.
 - The 60-80 character width and 8-20 line height are a guardrail, not a suggestion. That range fits inside a chat pane or terminal without wrapping, and it forces the sketch to leave out detail that belongs in a hi-fi mockup.
 - Mobile proportions (narrower, taller box, mirroring a 390x844 screen) are the default when no platform is stated.
-- The skill asks one clarifying question, never more, when a request under-specifies the screen or its primary job, instead of guessing.
+- The skill asks one clarifying question, never more, when a request under-specifies the screen or its primary job, instead of guessing - and it scopes that question to whatever is missing rather than re-asking what it already has.
+- A screenshot settles the screen, not the job. An image shows the elements and the current layout; it cannot show what the screen is for, and without the job three hypotheses collapse into three restyles. So a screenshot with no stated job gets the one question about the job, then the three variants.
 - Rationale, citations, and "why" explanations are absent from this phase on purpose. A low-fidelity sketch earns its value by being cheap to throw away; a citation makes a reviewer defend a choice instead of reacting to it.
 - Once a variant is picked, the skill hands off to a pixel-faithful HTML build rather than doing both jobs in one pass - see [html-mockup](https://github.com/humbleteam/html-mockup) for that step.
 
@@ -154,6 +156,9 @@ Yes. This skill has Claude produce monospace ASCII wireframes directly in a chat
 
 **What symbols should an ASCII wireframe use?**
 This skill pins one legend: `+ - |` for borders, `[ Label ]` for a secondary button and `[[ Label ]]` for a primary one, `[.....]` for a text input, `[ ]` / `[x]` for checkboxes, `( )` / `(o)` for radios, `[ Label v ]` for a dropdown, `[o--]` / `[--o]` for a toggle, `(icon-name)` for icons, `[IMG: description]` for a photo region, `*asterisks*` around an active nav item, `...` for a row that repeats, `v v v` for content below the fold, and `=` borders for a modal above the page. When a screen needs something the legend does not name, the rule is to borrow the closest symbol and let the label say what it is - a date picker as `[ 12 Mar 2026 v ]` - rather than invent a symbol partway through, which is what makes a set of variants stop being comparable.
+
+**Can I just attach a screenshot of the current screen?**
+Yes, and it saves you describing the layout - the image settles what is on the screen. It cannot settle what the screen is for, which is the input the three hypotheses are built against, so expect one question about the primary job before the variants arrive. Answer it and you get three directions rather than three restyles of what you already have. What you will not get is a description of your own screenshot back.
 
 **What is low-fidelity wireframing for AI agents?**
 A deliberately cheap, text-only sketching step that happens before any hi-fi mockup or code, so a team aligns on structure and value proposition first.
