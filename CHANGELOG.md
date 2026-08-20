@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0] - 2026-08-20
+
+- Fixed the width rule, which stated two different answers for the same request. Step 3 and the sizing section both mandated 60-80 characters, while the mobile default - the path that fires whenever no platform is stated, which is most of them - mandated 55-65. Only the 60-65 sliver was legal under both, and nothing said which rule won outside it. The contradiction shipped in 1.0.0, where the guardrail and the mobile default arrived as two separate bullets that were never reconciled.
+- One envelope now holds every width the skill picks for itself, 55-80 characters and 8-20 lines, and the platform picks exactly one range inside it: 55-65 when no platform is stated, 66-80 for desktop or tablet. The ranges do not overlap, so a request has one width and every variant in the response is drawn at it - variants of different widths cannot be compared down a column, which is the point of sketching in text at all. A width stated as a number by the user is used as given and is the only thing that leaves the envelope.
+- Stated why mobile is the default rather than leaving it as a bare rule: it is the harder constraint, and a layout that survives 60 characters usually survives 80.
+- Realigned the three README example wireframes onto one 62-character grid. Their rows ran 62 to 66 characters inside a 62-character frame, so the right border did not close on any of them, and the widest row fell outside the band this release makes binding.
+
 ## [1.2.0] - 2026-08-13
 
 - Fixed the contradiction that governed every screenshot request. Step 1 requires both the screen and its primary job before sketching and says not to proceed on a partial brief, while the failure-modes table told the skill to take a screenshot and produce three hypotheses anyway. A screenshot supplies the screen and never the job, so the two rules gave opposite instructions on the most common way this skill is invoked - drop an image, ask for options.

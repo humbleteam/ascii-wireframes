@@ -34,7 +34,7 @@ If the user asks for more than 5 variants, cap at 5 and say why: past five, a re
 For each hypothesis, in order, output exactly this shape:
 
 1. A one-line label: `V<N> - <hypothesis in one phrase>`.
-2. A fenced code block containing the ASCII wireframe. Use the legend below. Width 60-80 characters. Height 8-20 lines.
+2. A fenced code block containing the ASCII wireframe. Use the legend below, and the width the platform rule picks - see Sizing and platform defaults. Height 8-20 lines.
 3. One plain-language line after the code block, stating the value proposition this variant leads with. No "Why:" prefix, no citation, no reference to a heuristic or a book. This phase stays cheap to reject - explanations belong later, in a design review.
 
 Repeat for every hypothesis before moving to Step 4.
@@ -75,9 +75,10 @@ Reuse the same legend across all variants in one response. Do not invent new sym
 
 ## Sizing and platform defaults
 
-- Width: 60-80 characters. Height: 8-20 lines. This range keeps a wireframe inside a chat pane or terminal without wrapping, and it forces the sketch to omit detail that belongs in hi-fi.
-- If the user does not state a platform, default to mobile proportions: a narrower box (55-65 characters), taller relative to its width, mirroring a 390x844 mobile screen.
-- If the user states desktop, tablet, or a specific width, use a wider, shorter box and honor it.
+- The envelope for every width this skill picks for itself: 55-80 characters wide, 8-20 lines tall. It keeps a wireframe inside a chat pane or terminal without wrapping, and it forces the sketch to omit detail that belongs in hi-fi. A width the user names is the one thing that overrides it.
+- **The platform picks the width inside that envelope, and it always picks exactly one range.** No platform stated - mobile proportions: 55-65 characters, taller relative to its width, mirroring a 390x844 mobile screen. Mobile is the default because it is the harder constraint: a layout that survives 60 characters usually survives 80, and the reverse is not true.
+- Desktop or tablet stated with no number: 66-80 characters, shorter relative to its width. A specific width stated as a number is used as given - if it falls outside 55-80, say in one line that it will wrap in a narrow pane, then draw it anyway.
+- The two ranges do not overlap on purpose. One request has one width, and every variant in the response uses it - variants drawn at different widths cannot be compared down a column, which is the whole reason to sketch them in text.
 
 ## Failure modes
 
@@ -95,4 +96,4 @@ Reuse the same legend across all variants in one response. Do not invent new sym
 
 - Keep the entire reply to the labeled wireframes plus the closing question. No preamble before the first variant, no summary paragraph after the last one.
 - Every hypothesis must be defensible as a different product decision, not a different visual treatment of the same decision.
-- The 60-80 / 8-20 ranges are guardrails for judgment, not something to visibly count out loud in the reply.
+- The width and height ranges are guardrails for judgment, not something to visibly count out loud in the reply.
