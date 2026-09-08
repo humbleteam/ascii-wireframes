@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.4.0] - 2026-09-08
+
+- Closed a door the skill had no way to walk through. Step 4 said not to add a recommendation or a "best" pick "unless the user asks for one directly", and that exception licensed the one output the rest of the skill is built to refuse. Step 3 forbids rationale, the failure-mode table declines a "why" outright, and the README states three separate times that citations and rationale are absent from this phase on purpose. So a request for a pick left two moves: a bare winner with no reason, which is an unsupported assertion, or a reasoned one, which breaks the rule stated in five places.
+- The deeper problem was that nothing in scope could support a pick at all. Step 1 collects the screen and its primary job and nothing else, while Step 2 requires the three hypotheses to be genuinely different product bets. Which bet is right turns on the users, the business model, and what the team can build - facts a wireframe does not carry and the skill never asks for. A winner named from what is on the page is a preference wearing the word "recommendation", in a skill whose Step 1 spine is "do not guess and do not proceed on a partial brief".
+- Being asked for a pick no longer unlocks one, and the exception is gone. Asking now produces a defined answer rather than either a refusal or a guess: one line per variant naming what it bets on, in the same plain language as the line under its wireframe, then the single question whose answer would decide it - one question, the same discipline as Step 1. The call stays with the person who has the context.
+- Restated where a comparative verdict does belong: after a direction is picked and there is a mockup to review, which is what the failure-mode table already said about rationale and what Step 5 already does for HTML.
+- Added a failure-mode row for the request, and matching updates to the README's what-it-does and how-it-works sections plus a new FAQ answer, so every statement of the rule agrees.
+
 ## [1.3.0] - 2026-08-20
 
 - Fixed the width rule, which stated two different answers for the same request. Step 3 and the sizing section both mandated 60-80 characters, while the mobile default - the path that fires whenever no platform is stated, which is most of them - mandated 55-65. Only the 60-65 sliver was legal under both, and nothing said which rule won outside it. The contradiction shipped in 1.0.0, where the guardrail and the mobile default arrived as two separate bullets that were never reconciled.

@@ -34,6 +34,7 @@ Explore three layout directions for a screen in plain text, compare them side by
 - Asks exactly one clarifying question when the screen or its primary job is unclear, instead of guessing - and asks only about the part that is actually missing.
 - Caps output at five variants and states why: more options slow a decision down instead of speeding it up.
 - Skips citations and rationale in this phase on purpose - a wireframe is only useful while it stays cheap to throw away.
+- Declines to name a best variant even when asked directly, and hands back the one question that would decide it instead - three product bets cannot be ranked from a sketch.
 
 ## Quick start
 
@@ -136,7 +137,7 @@ Which variant(s) should move forward?
 - The platform picks the width, and picks exactly one range for it. No platform stated means mobile proportions - 55-65 characters, narrower and taller, mirroring a 390x844 screen - because mobile is the harder constraint. Desktop or tablet moves it to 66-80, wider and shorter. The two ranges do not overlap, so every variant in one response is drawn at the same width and compares down a column.
 - The skill asks one clarifying question, never more, when a request under-specifies the screen or its primary job, instead of guessing - and it scopes that question to whatever is missing rather than re-asking what it already has.
 - A screenshot settles the screen, not the job. An image shows the elements and the current layout; it cannot show what the screen is for, and without the job three hypotheses collapse into three restyles. So a screenshot with no stated job gets the one question about the job, then the three variants.
-- Rationale, citations, and "why" explanations are absent from this phase on purpose. A low-fidelity sketch earns its value by being cheap to throw away; a citation makes a reviewer defend a choice instead of reacting to it.
+- Rationale, citations, and "why" explanations are absent from this phase on purpose. A low-fidelity sketch earns its value by being cheap to throw away; a citation makes a reviewer defend a choice instead of reacting to it. Asking for a winner does not unlock one either: the skill holds the screen and its job and nothing else, so ranking three product bets would mean inventing the facts that decide them. It names what each variant bets on and asks the one question that settles it, leaving the call with the person who has the context.
 - Once a variant is picked, the skill hands off to a pixel-faithful HTML build rather than doing both jobs in one pass - see [html-mockup](https://github.com/humbleteam/html-mockup) for that step.
 
 ## How is this different from just asking the model?
@@ -165,6 +166,9 @@ A deliberately cheap, text-only sketching step that happens before any hi-fi moc
 
 **How wide should an ASCII wireframe be?**
 Wide enough to hold the layout, narrow enough not to wrap in a chat pane: 55-80 characters, 8-20 lines tall. Inside that envelope the platform decides, and it decides once for the whole response - 55-65 characters when no platform is stated (mobile is the default, being the harder constraint), 66-80 for desktop or tablet. Name a width yourself and the skill uses it as given.
+
+**Which variant should I pick - can it just tell me?**
+No, and asking directly does not change the answer. The skill knows two things about your project: the screen and its primary job. The three variants are three different product bets, and which one is right depends on your users, your business model, and what your team can build - none of which fits inside a wireframe or gets asked for at this stage. A "best" pick made anyway would be a preference with a recommendation's label on it, which is the thing the no-rationale rule exists to keep out. What you get instead is one line per variant naming what it bets on, and the single question whose answer decides it. You are the one holding that answer. A comparative verdict with reasons behind it is a design-review job, once a direction is picked and there is a mockup to review.
 
 **What happens after I pick a variant?**
 The skill confirms your selection in one line, then points to the [html-mockup](https://github.com/humbleteam/html-mockup) skill for turning the chosen wireframe into a pixel-faithful HTML mockup against a reference screenshot. It does not generate HTML itself.

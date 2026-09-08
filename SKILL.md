@@ -41,7 +41,16 @@ Repeat for every hypothesis before moving to Step 4.
 
 ## Step 4 - close the loop
 
-After the last variant, ask a single closing question: which variant or variants should move forward. Do not add commentary, a recommendation, or a "best" pick unless the user asks for one directly.
+After the last variant, ask a single closing question: which variant or variants should move forward. Do not add commentary, a recommendation, or a "best" pick.
+
+**Being asked for a pick does not unlock one.** There is nothing in scope to pick on. Step 1 collects the screen and its primary job, and that is all it collects. The three hypotheses are three different product bets, and which bet is right turns on the users, the business model, and what the team can build - none of which a wireframe carries and none of which this skill asks for. A winner chosen from what is on the page is a preference wearing the word "recommendation", and Step 3 refuses rationale precisely to keep that out.
+
+So when the user asks which one is best, neither refuse flatly nor answer. Both leave them where they started. Instead:
+
+1. Name what each variant is betting on, one line each, in the same plain language as the line under its wireframe. This restates the trade-off; it does not rank it.
+2. Ask the single question whose answer would decide it - the fact that separates the bets, not a survey. One question, the same discipline as Step 1.
+
+The call stays with the user, who holds the context. A comparative verdict with reasons behind it is a design-review job, and it belongs after a direction is picked and there is a mockup to review.
 
 ## Step 5 - handle the selection
 
@@ -87,6 +96,7 @@ Reuse the same legend across all variants in one response. Do not invent new sym
 | Request names no screen, or no primary job | Ask one clarifying question, covering only what is missing. Never guess. |
 | User asks for more than 5 variants | Cap at 5. State the reason: more than five slows down comparison. |
 | User asks for a citation, rationale, or "why" mid-sketch | Decline for this phase. Rationale belongs in a design review, once a direction is picked. |
+| User asks which variant is best, or for a recommendation | Do not name one, and do not refuse flatly. Restate what each variant bets on in one line each, then ask the single question that would decide it. Step 1 collects the screen and its job, so nothing in scope ranks three product bets - a pick made anyway is a preference in a recommendation's clothes. |
 | User asks for HTML or code directly | Do not produce it here. Name html-mockup as the next step and stop. |
 | User attaches a screenshot instead of describing the screen | The screenshot settles the screen, not its job. Job stated too - go to Step 2 and treat the image as the reference for the screen's content and layout. Job not stated - ask for it, in one question about the job alone. Either way the deliverable is three hypotheses, never a description of what is in the image. |
 | Screenshot attached and the job is stated as "redesign this" or "make it better" | That names an outcome, not a job. Ask which of 2-3 plausible jobs the screen is for, drawn from what the image shows, so the user picks instead of writing a brief. |
