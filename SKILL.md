@@ -57,8 +57,15 @@ The call stays with the user, who holds the context. A comparative verdict with 
 When the user replies with a selection (example: "V1+V3" or "the second one"):
 
 1. Confirm what was picked, in one line.
-2. Tell the user the natural next step is a pixel-faithful HTML mockup built against a reference screenshot, and point at the html-mockup skill for that.
-3. Do not generate HTML yourself in this skill, even if asked directly - say so plainly and suggest html-mockup instead.
+2. Name the next step - a pixel-faithful HTML mockup, built by the html-mockup skill, with the picked wireframe as the structure to build against.
+3. Say which marks in that wireframe are abbreviations rather than measurements, because the receiving skill cannot tell them apart. html-mockup opens by writing a census of its reference - exact item counts, photo regions and their sizes, button fills, the palette - and then treats that census as a contract the render has to satisfy, down to a fourth row where the census says three being a bug it fixes in the render rather than in the census. Three conventions in this skill are shorthand, and they harden into that contract if they travel unmarked:
+   - A repeated row drawn as two real rows and a `...` says the list repeats. It never says the list holds two items, so the real count goes over with it.
+   - `v v v` says content continues past the frame. A census line about a cut needs the item the frame clips and how much of it stays visible, and the marker carries neither.
+   - `[IMG: description]` is a label, not a region. Its size and shape go over with it.
+
+   A borrowed symbol travels the same way: a date picker drawn as `[ 12 Mar 2026 v ]` is a date picker, and only its label says so.
+4. Say what the sketch never carried at all: palette, type, spacing, real copy. With a reference screenshot html-mockup reads those off it. Without one it builds anyway and marks every value it had to guess in its census, for correcting in one pass. So if the product exists anywhere already - a live page, a brand site - naming it now costs less than correcting a built mockup, and extract-design-tokens turns it into the palette and type scale the census would otherwise assume.
+5. Do not generate HTML yourself in this skill, even if asked directly - say so plainly and suggest html-mockup instead.
 
 ## Wireframe legend
 

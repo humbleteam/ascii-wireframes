@@ -128,6 +128,30 @@ Leads with one task and its context, so a user lands already inside the thing th
 
 Which variant(s) should move forward?
 
+Picking one ends the sketching phase. The reply hands the wireframe on and separates what
+it states from what it only stands in for, because the next skill treats a count as a
+contract:
+
+```
+V2 it is - the project board overview.
+
+Next step is a pixel-faithful HTML mockup, which is the html-mockup skill's
+job rather than this one. Send it the V2 wireframe as the structure to build
+against, and these three with it, because the sketch stands in for them:
+
+- The DONE column draws two cards and a `...` under a header that reads 8.
+  The `...` says the column repeats, not that it holds two cards. The header
+  count is the real one in every column; the drawn rows are not.
+- Every card in the sketch reads [ Card ]. That says a card sits there and
+  nothing about what is on it.
+- Palette, type, spacing and real copy were never in the sketch at all.
+
+If TaskFlow already exists anywhere - a live board, a brand page - point
+html-mockup at it and the last of those comes off the reference instead of a
+guess. With no reference it still builds, and marks every value it had to
+assume in its census so you correct them in one pass rather than after.
+```
+
 ## How it works
 
 - Every hypothesis has to be a different product decision, not a different visual treatment. Changing only color, spacing, or font between two variants makes them the same hypothesis twice.
@@ -138,7 +162,7 @@ Which variant(s) should move forward?
 - The skill asks one clarifying question, never more, when a request under-specifies the screen or its primary job, instead of guessing - and it scopes that question to whatever is missing rather than re-asking what it already has.
 - A screenshot settles the screen, not the job. An image shows the elements and the current layout; it cannot show what the screen is for, and without the job three hypotheses collapse into three restyles. So a screenshot with no stated job gets the one question about the job, then the three variants.
 - Rationale, citations, and "why" explanations are absent from this phase on purpose. A low-fidelity sketch earns its value by being cheap to throw away; a citation makes a reviewer defend a choice instead of reacting to it. Asking for a winner does not unlock one either: the skill holds the screen and its job and nothing else, so ranking three product bets would mean inventing the facts that decide them. It names what each variant bets on and asks the one question that settles it, leaving the call with the person who has the context.
-- Once a variant is picked, the skill hands off to a pixel-faithful HTML build rather than doing both jobs in one pass - see [html-mockup](https://github.com/humbleteam/html-mockup) for that step.
+- Once a variant is picked, the skill hands off to a pixel-faithful HTML build rather than doing both jobs in one pass - see [html-mockup](https://github.com/humbleteam/html-mockup) for that step. The handoff says which marks in the sketch are literal and which are shorthand. A list drawn as two rows and a `...` means the list repeats, not that it has two rows, and the skill that builds the mockup writes a census of exact counts and holds its own render to it - so an abbreviation that crosses unmarked stops being an abbreviation and becomes the spec.
 
 ## How is this different from just asking the model?
 
@@ -171,7 +195,7 @@ Wide enough to hold the layout, narrow enough not to wrap in a chat pane: 55-80 
 No, and asking directly does not change the answer. The skill knows two things about your project: the screen and its primary job. The three variants are three different product bets, and which one is right depends on your users, your business model, and what your team can build - none of which fits inside a wireframe or gets asked for at this stage. A "best" pick made anyway would be a preference with a recommendation's label on it, which is the thing the no-rationale rule exists to keep out. What you get instead is one line per variant naming what it bets on, and the single question whose answer decides it. You are the one holding that answer. A comparative verdict with reasons behind it is a design-review job, once a direction is picked and there is a mockup to review.
 
 **What happens after I pick a variant?**
-The skill confirms your selection in one line, then points to the [html-mockup](https://github.com/humbleteam/html-mockup) skill for turning the chosen wireframe into a pixel-faithful HTML mockup against a reference screenshot. It does not generate HTML itself.
+The skill confirms your selection in one line, then points to the [html-mockup](https://github.com/humbleteam/html-mockup) skill for turning the chosen wireframe into a pixel-faithful HTML mockup. It does not generate HTML itself. It also tells you what to send along with the sketch, which matters more than it sounds: a wireframe abbreviates on purpose - two rows and a `...` for a list of any length, `v v v` for everything below the fold, `[IMG: photo]` for a region with no size - while html-mockup starts by writing a census of exact counts and states and then holds the render to it. An abbreviation handed over unmarked becomes the spec, and a feed of two items is what you get back. Palette, type, spacing and copy were never in the sketch either; with a reference screenshot html-mockup reads them off it, and without one it marks every guessed value in the census so you correct them in one pass.
 
 **Does this skill write any HTML or code?**
 No. It is scoped to the ASCII sketching phase only. If asked for HTML mid-sketch, it names html-mockup as the next step instead of producing code.
