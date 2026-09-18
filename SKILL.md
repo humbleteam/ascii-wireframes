@@ -17,9 +17,9 @@ If either is missing, ask exactly one clarifying question, covering only what is
 
 **An attached screenshot settles the screen, never the primary job.** It shows what is on the screen: the elements, the current layout, the content. It cannot show what the screen is for, and the job is what Step 2 needs to tell three hypotheses apart from three restyles - "lead with a recommended plan" and "lead with an ROI calculator" are only different answers if there is a question. So a screenshot arriving with no stated job still goes to the clarifying question, and that question asks about the job alone rather than about a screen the image already shows.
 
-## Step 2 - decide three hypotheses
+## Step 2 - decide the hypotheses
 
-Pick three genuinely different hypotheses for the same screen. Each one is a different answer to: what value proposition does this screen lead with? A hypothesis is not valid if it only changes color, spacing, font, or component style from another one - that is a restyle, not a hypothesis.
+Three is the default, and a request that names no number gets three. Each hypothesis is a different answer to: what value proposition does this screen lead with? A hypothesis is not valid if it only changes color, spacing, font, or component style from another one - that is a restyle, not a hypothesis.
 
 Examples of distinct hypotheses for the same screen:
 
@@ -27,7 +27,9 @@ Examples of distinct hypotheses for the same screen:
 - Onboarding flow: (a) lead with a guided product tour, (b) lead with a self-seeding empty state, (c) lead with a single setup question.
 - Dashboard home: (a) lead with today's tasks, (b) lead with a project-board overview, (c) lead with a single focused item and its context.
 
-If the user asks for more than 5 variants, cap at 5 and say why: past five, a reviewer stops comparing and starts skimming.
+**A number the user states is used as given, anywhere from 2 to 5.** Both ends of that band carry a reason, and the reason is said out loud whenever the band bites. Past five a reviewer stops comparing and starts skimming, so a larger request is capped at 5. Below two there is nothing to compare: Step 4 closes by asking which variants move forward, and against a single sketch that question becomes a yes or no about the only thing on the page, which is a direction committed to rather than a direction picked. So a request for one comes back as 2, with that line under it.
+
+**A count the screen cannot fill comes back short, never padded.** The validity rule above is what makes this bite: if the screen and its job carry three genuinely different bets and the request asked for five, the fourth and fifth arrive as restyles, and a restyle is not a hypothesis. Draw the ones that are real, and say in one line that the count is short because the screen does not carry more.
 
 ## Step 3 - render each hypothesis
 
@@ -101,11 +103,14 @@ Reuse the same legend across all variants in one response. Do not invent new sym
 | Situation | Response |
 |---|---|
 | Request names no screen, or no primary job | Ask one clarifying question, covering only what is missing. Never guess. |
+| User names a variant count between 2 and 5 | Draw that many. Three is the default only for a request that names no number. |
 | User asks for more than 5 variants | Cap at 5. State the reason: more than five slows down comparison. |
+| User asks for a single variant | Draw 2 and say why in one line: one sketch leaves the closing question nothing to choose between, which is committing to a direction rather than comparing two. |
+| The screen carries fewer genuinely different bets than the count asked for | Draw the ones that are real and say in one line that the count is short. A variant added to reach the number is a restyle, which Step 2 does not accept as a hypothesis. |
 | User asks for a citation, rationale, or "why" mid-sketch | Decline for this phase. Rationale belongs in a design review, once a direction is picked. |
-| User asks which variant is best, or for a recommendation | Do not name one, and do not refuse flatly. Restate what each variant bets on in one line each, then ask the single question that would decide it. Step 1 collects the screen and its job, so nothing in scope ranks three product bets - a pick made anyway is a preference in a recommendation's clothes. |
+| User asks which variant is best, or for a recommendation | Do not name one, and do not refuse flatly. Restate what each variant bets on in one line each, then ask the single question that would decide it. Step 1 collects the screen and its job, so nothing in scope ranks the variants as product bets - a pick made anyway is a preference in a recommendation's clothes. |
 | User asks for HTML or code directly | Do not produce it here. Name html-mockup as the next step and stop. |
-| User attaches a screenshot instead of describing the screen | The screenshot settles the screen, not its job. Job stated too - go to Step 2 and treat the image as the reference for the screen's content and layout. Job not stated - ask for it, in one question about the job alone. Either way the deliverable is three hypotheses, never a description of what is in the image. |
+| User attaches a screenshot instead of describing the screen | The screenshot settles the screen, not its job. Job stated too - go to Step 2 and treat the image as the reference for the screen's content and layout. Job not stated - ask for it, in one question about the job alone. Either way the deliverable is the hypotheses, never a description of what is in the image. |
 | Screenshot attached and the job is stated as "redesign this" or "make it better" | That names an outcome, not a job. Ask which of 2-3 plausible jobs the screen is for, drawn from what the image shows, so the user picks instead of writing a brief. |
 | The screen needs a control the legend does not name | Borrow the nearest legend symbol and let the label do the work, per the legend's fallback rule. Never invent a symbol, and never drop the control from the sketch to avoid the problem - a missing control changes the layout being judged. |
 

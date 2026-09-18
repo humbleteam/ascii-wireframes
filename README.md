@@ -28,11 +28,11 @@ Explore three layout directions for a screen in plain text, compare them side by
 
 ## What it does
 
-- Generates three distinct layout hypotheses for one screen, each a different answer to what value proposition the screen leads with.
+- Generates three distinct layout hypotheses for one screen, each a different answer to what value proposition the screen leads with. Three is the default; a stated number is used as given anywhere from 2 to 5.
 - Renders each hypothesis as a monospace ASCII wireframe, 8-20 lines tall and as wide as the platform calls for - 55-65 characters for the mobile default, 66-80 when desktop or tablet is stated - in a fenced code block that displays correctly in any chat or terminal.
 - Uses one fixed legend per response - buttons, inputs, checkboxes, radios, dropdowns, toggles, icons, list rows, overlays, and active tabs always use the same symbols, so the variants are easy to compare.
 - Asks exactly one clarifying question when the screen or its primary job is unclear, instead of guessing - and asks only about the part that is actually missing.
-- Caps output at five variants and states why: more options slow a decision down instead of speeding it up.
+- Caps output at five variants and states why: more options slow a decision down instead of speeding it up. It floors at two for the same kind of reason - one sketch is a direction committed to, not a comparison - and says so rather than silently drawing a different number than you asked for.
 - Skips citations and rationale in this phase on purpose - a wireframe is only useful while it stays cheap to throw away.
 - Declines to name a best variant even when asked directly, and hands back the one question that would decide it instead - three product bets cannot be ranked from a sketch.
 
@@ -174,7 +174,7 @@ A bare prompt for "3 wireframe options" tends to return three versions of the sa
 Plain text renders identically in any chat window, terminal, or markdown viewer, with no image tooling required. It is also fast to produce and easy to diff against a follow-up revision.
 
 **How many design variants should I explore?**
-Three is the default - enough to force genuinely different value propositions without spreading a reviewer's attention too thin. The skill caps at five if asked for more, and explains why: past five, comparison turns into skimming.
+Three is the default - enough to force genuinely different value propositions without spreading a reviewer's attention too thin. Ask for a number and you get it, anywhere from 2 to 5. Both ends of that band have a reason and the skill states it when you hit one: past five, comparison turns into skimming, and below two there is nothing to compare, because the closing question asks which variants move forward and a lone sketch turns that into a yes or no about the only option on the page. If the screen genuinely does not carry as many different bets as you asked for, you get the ones that are real plus a line saying why the count is short - the missing variant would have been a restyle, and a restyle is not a hypothesis here.
 
 **Can Claude generate wireframes?**
 Yes. This skill has Claude produce monospace ASCII wireframes directly in a chat reply, using a fixed legend for buttons, inputs, and active states so output stays consistent across variants.

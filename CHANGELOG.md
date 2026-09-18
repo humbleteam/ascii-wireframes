@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0] - 2026-09-18
+
+- Settled the variant count, which the two files stated differently. Step 2 opened with "Pick three genuinely different hypotheses for the same screen" and closed with a cap at 5, so 4 and 5 were reachable with nothing saying how to get there, while the README's own FAQ already called three "the default". A request for two fell through every rule and would have come back as three without a word about it, which is the skill answering a question the user did not ask.
+- A stated number is now used as given, anywhere from 2 to 5, and three is the default only when no number is named. Both ends of the band carry a reason and the reason is stated whenever the band bites. The cap already had one: past five a reviewer stops comparing and starts skimming. The floor now has its own, drawn from what the skill already does rather than added on top - Step 4 closes by asking which variants move forward, and against a single sketch that question collapses into a yes or no about the only thing on the page, which is a direction committed to rather than a direction picked.
+- Said what happens when the screen cannot fill the count. Step 2 refuses a variant that only changes color, spacing, font or component style, so a screen carrying three genuinely different bets against a request for five can only reach five by drawing restyles. The run comes back short with one line saying why, the same way the cap and the floor announce themselves. Padding to a number was already forbidden by the validity rule; it was not written down as an outcome anywhere.
+- Added three failure-mode rows - a stated count inside the band, a request for one, and a screen that carries fewer bets than were asked for - and matching updates to the README's what-it-does bullets and the variant-count FAQ answer, so every statement of the rule agrees.
+
 ## [1.5.0] - 2026-09-13
 
 - Added an example of the handoff reply to the README. Step 5 is the end of every run that goes well, and the repo rendered no output for it anywhere - the example stopped at the closing question, so the one reply that carries the sketch into the next phase existed only as three numbered instructions.
