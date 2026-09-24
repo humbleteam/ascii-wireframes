@@ -2,7 +2,7 @@
 
 <h1>ASCII wireframes</h1>
 
-**Sketch three genuinely different layout hypotheses as ASCII wireframes before opening Figma or writing a line of HTML - built for design teams who want to compare directions, not commit to one too early.**
+**Sketch genuinely different layout hypotheses as ASCII wireframes before opening Figma or writing a line of HTML - three by default, two to five when you name a number - built for design teams who want to compare directions, not commit to one too early.**
 
 [![CI](https://img.shields.io/github/actions/workflow/status/humbleteam/ascii-wireframes/validate.yml?branch=main&style=for-the-badge&logo=github&label=CI)](https://github.com/humbleteam/ascii-wireframes/actions/workflows/validate.yml)
 [![GitHub stars](https://img.shields.io/github/stars/humbleteam/ascii-wireframes?style=for-the-badge&logo=github&color=181717)](https://github.com/humbleteam/ascii-wireframes/stargazers)
@@ -12,7 +12,7 @@
 
 </div>
 
-Explore three layout directions for a screen in plain text, compare them side by side, and pick one before any hi-fi work starts. The skill takes a screen name and its primary job as input, and returns three monospace ASCII wireframes, each answering a different version of "what does this screen lead with" - not three palette variations of the same layout. A fixed legend keeps buttons, inputs, and active states readable the same way across all three.
+Explore several layout directions for a screen in plain text, compare them side by side, and pick one before any hi-fi work starts. The skill takes a screen name and its primary job as input, and returns one monospace ASCII wireframe per hypothesis - three by default, or the number you name, anywhere from 2 to 5 - each answering a different version of "what does this screen lead with", not a palette variation of the same layout. A fixed legend keeps buttons, inputs, and active states readable the same way across every variant.
 
 ## Table of contents
 
@@ -28,7 +28,7 @@ Explore three layout directions for a screen in plain text, compare them side by
 
 ## What it does
 
-- Generates three distinct layout hypotheses for one screen, each a different answer to what value proposition the screen leads with. Three is the default; a stated number is used as given anywhere from 2 to 5.
+- Generates distinct layout hypotheses for one screen, each a different answer to what value proposition the screen leads with. Three is the default; a stated number is used as given anywhere from 2 to 5, and a word that names a count - a couple, a pair - states it as plainly as the digit does.
 - Renders each hypothesis as a monospace ASCII wireframe, 8-20 lines tall and as wide as the platform calls for - 55-65 characters for the mobile default, 66-80 when desktop or tablet is stated - in a fenced code block that displays correctly in any chat or terminal.
 - Uses one fixed legend per response - buttons, inputs, checkboxes, radios, dropdowns, toggles, icons, list rows, overlays, and active tabs always use the same symbols, so the variants are easy to compare.
 - Asks exactly one clarifying question when the screen or its primary job is unclear, instead of guessing - and asks only about the part that is actually missing.
@@ -160,13 +160,13 @@ assume in its census so you correct them in one pass rather than after.
 - Width and height are a guardrail, not a suggestion. Everything the skill sizes for itself stays inside 55-80 characters and 8-20 lines: that fits a chat pane or terminal without wrapping, and it forces the sketch to leave out detail that belongs in a hi-fi mockup. A width you name yourself is the one thing that overrides it.
 - The platform picks the width, and picks exactly one range for it. No platform stated means mobile proportions - 55-65 characters, narrower and taller, mirroring a 390x844 screen - because mobile is the harder constraint. Desktop or tablet moves it to 66-80, wider and shorter. The two ranges do not overlap, so every variant in one response is drawn at the same width and compares down a column.
 - The skill asks one clarifying question, never more, when a request under-specifies the screen or its primary job, instead of guessing - and it scopes that question to whatever is missing rather than re-asking what it already has.
-- A screenshot settles the screen, not the job. An image shows the elements and the current layout; it cannot show what the screen is for, and without the job three hypotheses collapse into three restyles. So a screenshot with no stated job gets the one question about the job, then the three variants.
+- A screenshot settles the screen, not the job. An image shows the elements and the current layout; it cannot show what the screen is for, and without the job three hypotheses collapse into three restyles. So a screenshot with no stated job gets the one question about the job, then the variants.
 - Rationale, citations, and "why" explanations are absent from this phase on purpose. A low-fidelity sketch earns its value by being cheap to throw away; a citation makes a reviewer defend a choice instead of reacting to it. Asking for a winner does not unlock one either: the skill holds the screen and its job and nothing else, so ranking three product bets would mean inventing the facts that decide them. It names what each variant bets on and asks the one question that settles it, leaving the call with the person who has the context.
 - Once a variant is picked, the skill hands off to a pixel-faithful HTML build rather than doing both jobs in one pass - see [html-mockup](https://github.com/humbleteam/html-mockup) for that step. The handoff says which marks in the sketch are literal and which are shorthand. A list drawn as two rows and a `...` means the list repeats, not that it has two rows, and the skill that builds the mockup writes a census of exact counts and holds its own render to it - so an abbreviation that crosses unmarked stops being an abbreviation and becomes the spec.
 
 ## How is this different from just asking the model?
 
-A bare prompt for "3 wireframe options" tends to return three versions of the same layout with different colors or spacing, not three different product decisions. It also sneaks in hi-fi opinions - font choices, exact colors - before a direction is picked, and it produces wireframes of inconsistent width and symbol use that are hard to scan side by side. This skill forces three distinct value propositions, pins one legend and one size range for the whole response, and refuses citations or rationale at this stage on purpose, because a low-fidelity sketch only earns its keep if it costs nothing to reject.
+A bare prompt for "3 wireframe options" tends to return three versions of the same layout with different colors or spacing, not three different product decisions. It also sneaks in hi-fi opinions - font choices, exact colors - before a direction is picked, and it produces wireframes of inconsistent width and symbol use that are hard to scan side by side. This skill forces every variant to carry its own value proposition, pins one legend and one size range for the whole response, and refuses citations or rationale at this stage on purpose, because a low-fidelity sketch only earns its keep if it costs nothing to reject.
 
 ## FAQ
 
@@ -174,7 +174,7 @@ A bare prompt for "3 wireframe options" tends to return three versions of the sa
 Plain text renders identically in any chat window, terminal, or markdown viewer, with no image tooling required. It is also fast to produce and easy to diff against a follow-up revision.
 
 **How many design variants should I explore?**
-Three is the default - enough to force genuinely different value propositions without spreading a reviewer's attention too thin. Ask for a number and you get it, anywhere from 2 to 5. Both ends of that band have a reason and the skill states it when you hit one: past five, comparison turns into skimming, and below two there is nothing to compare, because the closing question asks which variants move forward and a lone sketch turns that into a yes or no about the only option on the page. If the screen genuinely does not carry as many different bets as you asked for, you get the ones that are real plus a line saying why the count is short - the missing variant would have been a restyle, and a restyle is not a hypothesis here.
+Three is the default - enough to force genuinely different value propositions without spreading a reviewer's attention too thin. Ask for a number and you get it, anywhere from 2 to 5, and a word that names a count asks as clearly as a digit: a couple or a pair is two, while some, a few and several leave the count open and take the default. Both ends of that band have a reason and the skill states it when you hit one: past five, comparison turns into skimming, and below two there is nothing to compare, because the closing question asks which variants move forward and a lone sketch turns that into a yes or no about the only option on the page. If the screen genuinely does not carry as many different bets as you asked for, you get the ones that are real plus a line saying why the count is short - the missing variant would have been a restyle, and a restyle is not a hypothesis here.
 
 **Can Claude generate wireframes?**
 Yes. This skill has Claude produce monospace ASCII wireframes directly in a chat reply, using a fixed legend for buttons, inputs, and active states so output stays consistent across variants.

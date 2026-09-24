@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0] - 2026-09-24
+
+- Carried the variant-count rule to the surface a reader meets first. 1.6.0 made three the default and a stated number binding anywhere from 2 to 5, and updated Step 2, the failure-mode table, the README's what-it-does bullets and the variant-count FAQ. The frontmatter description still opened "Sketches three genuinely different layout hypotheses", and the README hero and opening paragraph still promised three. The description is the trigger surface - it is what decides whether this skill is picked up at all, and it is the first thing a reader is told - so "draw two layout directions for this page" met a skill that advertises three, with the rule that would have honoured the two buried three sections down.
+- The description now states the rule it triggers on: three by default, or the number the user names, anywhere from 2 to 5, with a two-variant request added to the trigger phrases. The README hero and the opening paragraph say the same, and the paragraph now describes one wireframe per hypothesis rather than three wireframes.
+- Writing that exposed the question the rule never answered: what counts as naming a number. Step 2 said "a number the user states", and the README's own Usage has "sketch some options" returning three, so words were already deciding counts with nothing written about them. A couple and a pair name two the way the digit does; some, a few, several and a handful leave the count open and take the default. The test is whether being wrong about the word costs the user anything - a couple answered with three hands back a variant nobody asked for, while a few answered with three is what the word meant.
+- Added a failure-mode row for the word counts, and matching updates to the what-it-does bullet, the variant-count FAQ answer and the two remaining prose lines that still counted in threes, so every statement of the rule agrees.
+
 ## [1.6.0] - 2026-09-18
 
 - Settled the variant count, which the two files stated differently. Step 2 opened with "Pick three genuinely different hypotheses for the same screen" and closed with a cap at 5, so 4 and 5 were reachable with nothing saying how to get there, while the README's own FAQ already called three "the default". A request for two fell through every rule and would have come back as three without a word about it, which is the skill answering a question the user did not ask.

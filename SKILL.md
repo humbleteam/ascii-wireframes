@@ -1,6 +1,6 @@
 ---
 name: ascii-wireframes
-description: Sketches three genuinely different layout hypotheses as ASCII wireframes before any hi-fi design work starts. Use when a user asks to "show me some layout options", "sketch a few wireframes", "give me 3 versions of this screen", "explore layouts before Figma", or "ascii wireframe this". Do not use for pixel-faithful HTML mockups built from a reference screenshot - use html-mockup for that.
+description: Sketches genuinely different layout hypotheses as ASCII wireframes before any hi-fi design work starts - three by default, or the number the user names, anywhere from 2 to 5. Use when a user asks to "show me some layout options", "sketch a few wireframes", "give me 3 versions of this screen", "draw two layout directions for this page", "explore layouts before Figma", or "ascii wireframe this". Do not use for pixel-faithful HTML mockups built from a reference screenshot - use html-mockup for that.
 ---
 
 # ASCII wireframes
@@ -29,6 +29,8 @@ Examples of distinct hypotheses for the same screen:
 
 **A number the user states is used as given, anywhere from 2 to 5.** Both ends of that band carry a reason, and the reason is said out loud whenever the band bites. Past five a reviewer stops comparing and starts skimming, so a larger request is capped at 5. Below two there is nothing to compare: Step 4 closes by asking which variants move forward, and against a single sketch that question becomes a yes or no about the only thing on the page, which is a direction committed to rather than a direction picked. So a request for one comes back as 2, with that line under it.
 
+**A word states a number only when it names one.** "A couple" and "a pair" name two the way the digit does, and they are used as given. "Some", "a few", "several" and "a handful" name no count at all - they ask for a comparison and leave the size of it open - so they take the default three. The test is whether being wrong about the word would cost the user anything: someone who asked for a couple and got three was handed a variant they did not ask for, while someone who asked for a few and got three got what the word meant.
+
 **A count the screen cannot fill comes back short, never padded.** The validity rule above is what makes this bite: if the screen and its job carry three genuinely different bets and the request asked for five, the fourth and fifth arrive as restyles, and a restyle is not a hypothesis. Draw the ones that are real, and say in one line that the count is short because the screen does not carry more.
 
 ## Step 3 - render each hypothesis
@@ -45,7 +47,7 @@ Repeat for every hypothesis before moving to Step 4.
 
 After the last variant, ask a single closing question: which variant or variants should move forward. Do not add commentary, a recommendation, or a "best" pick.
 
-**Being asked for a pick does not unlock one.** There is nothing in scope to pick on. Step 1 collects the screen and its primary job, and that is all it collects. The three hypotheses are three different product bets, and which bet is right turns on the users, the business model, and what the team can build - none of which a wireframe carries and none of which this skill asks for. A winner chosen from what is on the page is a preference wearing the word "recommendation", and Step 3 refuses rationale precisely to keep that out.
+**Being asked for a pick does not unlock one.** There is nothing in scope to pick on. Step 1 collects the screen and its primary job, and that is all it collects. The hypotheses are different product bets, and which bet is right turns on the users, the business model, and what the team can build - none of which a wireframe carries and none of which this skill asks for. A winner chosen from what is on the page is a preference wearing the word "recommendation", and Step 3 refuses rationale precisely to keep that out.
 
 So when the user asks which one is best, neither refuse flatly nor answer. Both leave them where they started. Instead:
 
@@ -104,6 +106,7 @@ Reuse the same legend across all variants in one response. Do not invent new sym
 |---|---|
 | Request names no screen, or no primary job | Ask one clarifying question, covering only what is missing. Never guess. |
 | User names a variant count between 2 and 5 | Draw that many. Three is the default only for a request that names no number. |
+| Request says "a couple" or "a pair" | A word that names a count is a stated count: draw 2. "Some", "a few", "several" and "a handful" name no count and take the default three. |
 | User asks for more than 5 variants | Cap at 5. State the reason: more than five slows down comparison. |
 | User asks for a single variant | Draw 2 and say why in one line: one sketch leaves the closing question nothing to choose between, which is committing to a direction rather than comparing two. |
 | The screen carries fewer genuinely different bets than the count asked for | Draw the ones that are real and say in one line that the count is short. A variant added to reach the number is a restyle, which Step 2 does not accept as a hypothesis. |
