@@ -21,11 +21,19 @@ If either is missing, ask exactly one clarifying question, covering only what is
 
 Three is the default, and a request that names no number gets three. Each hypothesis is a different answer to: what value proposition does this screen lead with? A hypothesis is not valid if it only changes color, spacing, font, or component style from another one - that is a restyle, not a hypothesis.
 
-Examples of distinct hypotheses for the same screen:
+Examples of distinct hypotheses for the same screen, at the default count of three:
 
 - Pricing page: (a) lead with a single recommended plan, (b) lead with a feature-comparison table, (c) lead with an ROI calculator.
 - Onboarding flow: (a) lead with a guided product tour, (b) lead with a self-seeding empty state, (c) lead with a single setup question.
 - Dashboard home: (a) lead with today's tasks, (b) lead with a project-board overview, (c) lead with a single focused item and its context.
+
+Three sets of three illustrate the default, not the band. The same screens at the counts either side of it:
+
+- "Draw a couple of directions for the pricing page" - two, because a word that names a count is a stated count: (a) lead with a single recommended plan, (b) lead with an ROI calculator. The feature-comparison table is the one that goes, and it goes because it sits between the other two rather than because it was third on the list - it asks the user to decide, like the calculator, but out of the page's own content, like the recommended plan.
+- "Five options for the dashboard home" - five, because this screen carries five different bets: (a) lead with today's tasks, (b) lead with a project-board overview, (c) lead with a single focused item and its context, (d) lead with the team's activity feed, (e) lead with a summary of delivery metrics.
+- "Five options for the onboarding flow" - three, plus the one line saying the count is short. That flow carries the guided tour, the self-seeding empty state and the setup question; a fourth and a fifth would rearrange one of those, and a rearrangement is a restyle.
+
+**A stated count below what the screen carries is filled with the hypotheses furthest apart.** The rule above said a stated number is used as given and said nothing about which ones to draw, so a pricing page carrying three bets and a request for two left the choice unwritten - and the obvious move, taking the first two off the list, is the one that costs the most. Two hypotheses next to each other are the pair closest to being a restyle of each other, which is the single relation the validity rule rejects between hypotheses, so a comparison built out of them shows less spread than the screen actually has while looking complete. Pick for distance on what the screen leads with, and name the dropped direction in one line if the user asks what is missing. Distance is also what the band's floor is protecting: two sketches are only worth comparing when they are two different answers.
 
 **A number the user states is used as given, anywhere from 2 to 5.** Both ends of that band carry a reason, and the reason is said out loud whenever the band bites. Past five a reviewer stops comparing and starts skimming, so a larger request is capped at 5. Below two there is nothing to compare: Step 4 closes by asking which variants move forward, and against a single sketch that question becomes a yes or no about the only thing on the page, which is a direction committed to rather than a direction picked. So a request for one comes back as 2, with that line under it.
 
@@ -110,6 +118,7 @@ Reuse the same legend across all variants in one response. Do not invent new sym
 | User asks for more than 5 variants | Cap at 5. State the reason: more than five slows down comparison. |
 | User asks for a single variant | Draw 2 and say why in one line: one sketch leaves the closing question nothing to choose between, which is committing to a direction rather than comparing two. |
 | The screen carries fewer genuinely different bets than the count asked for | Draw the ones that are real and say in one line that the count is short. A variant added to reach the number is a restyle, which Step 2 does not accept as a hypothesis. |
+| The screen carries more genuinely different bets than the count asked for | Draw the ones furthest apart on what the screen leads with, never the first ones off the list. The nearest pair is the closest thing to a restyle of each other, which Step 2 rejects between hypotheses, so it hands back less spread than the screen has while looking complete. |
 | User asks for a citation, rationale, or "why" mid-sketch | Decline for this phase. Rationale belongs in a design review, once a direction is picked. |
 | User asks which variant is best, or for a recommendation | Do not name one, and do not refuse flatly. Restate what each variant bets on in one line each, then ask the single question that would decide it. Step 1 collects the screen and its job, so nothing in scope ranks the variants as product bets - a pick made anyway is a preference in a recommendation's clothes. |
 | User asks for HTML or code directly | Do not produce it here. Name html-mockup as the next step and stop. |
