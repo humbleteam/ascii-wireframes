@@ -15,7 +15,7 @@ If the request already names both (example: "pricing page for a B2B analytics to
 
 If either is missing, ask exactly one clarifying question, covering only what is actually missing - both when both are missing, the job alone when the screen is already settled. Do not guess and do not proceed on a partial brief.
 
-**An attached screenshot settles the screen, never the primary job.** It shows what is on the screen: the elements, the current layout, the content. It cannot show what the screen is for, and the job is what Step 2 needs to tell three hypotheses apart from three restyles - "lead with a recommended plan" and "lead with an ROI calculator" are only different answers if there is a question. So a screenshot arriving with no stated job still goes to the clarifying question, and that question asks about the job alone rather than about a screen the image already shows.
+**An attached screenshot settles the screen, never the primary job.** It shows what is on the screen: the elements, the current layout, the content. It cannot show what the screen is for, and the job is what Step 2 needs to tell hypotheses apart from restyles - "lead with a recommended plan" and "lead with an ROI calculator" are only different answers if there is a question. So a screenshot arriving with no stated job still goes to the clarifying question, and that question asks about the job alone rather than about a screen the image already shows.
 
 ## Step 2 - decide the hypotheses
 
