@@ -1,13 +1,5 @@
 # Changelog
 
-## [1.10.0] - 2026-10-15
-
-- Brought the prose that states the variant count in line with the band 1.7.0 opened. The count has been three by default and 2 to 5 when the user names one since 1.7.0, and the rules, the tagline, the what-it-does bullet and the how-many FAQ answer all say so. Six passages did not follow, each writing a general claim about the variants as a claim about three of them, so the documents contradicted their own band for every count except the default.
-- The six: in the README, the decline-a-winner bullet, the screenshot bullet and the no-rationale bullet under how it works, the attach-a-screenshot FAQ answer and the which-variant-should-I-pick FAQ answer; in SKILL.md, the screenshot rule in Step 1. A reader asking for two or for five met the right rule and then read that three hypotheses collapse into three restyles without the job, or that the three variants are three product bets.
-- None of those claims depended on the number. A set of product bets cannot be ranked from a sketch whatever its size, hypotheses with no job behind them collapse into restyles at any count, and a screenshot settles the screen and not the job for two sketches as much as for five. The count is dropped where the claim never needed it and kept where the passage is genuinely about the default.
-- Nothing kept a count that is doing real work: the tagline and the what-it-does bullet still state the default and the band, the how-many FAQ answer still carries both ends and their reasons, the worked examples still show the counts they actually return, and Step 2's filling rule still illustrates with a pricing page carrying three bets against a request for two.
-- No rule changed, no default moved, and no number in the band was touched.
-
 ## [1.9.0] - 2026-10-08
 
 - Settled the case where the two Step 2 count rules point at different numbers. The short-count rule says to draw the ones that are real when the screen carries fewer bets than the request asked for, and the band's floor says a single sketch is not a comparison because Step 4's closing question becomes a yes or no about the only thing on the page. A screen carrying exactly one genuine bet satisfies the first by coming back as one sketch, which is the precise state the second exists to prevent. The floor was written as a reply to a request for one variant, so it bound the request and not the output, while its reason is about what ends up on the page and does not care which route got it there. The failure-mode table reproduced the gap with two rows that each resolved half of it.
