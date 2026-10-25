@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.12.0] - 2026-10-25
+
+- Closed the collision 1.11.0 resolved for a stated count of one, which was the same collision one step along for a stated count of two to five and no rule named it. 1.11.0 settled the floor against the one-bet rule. A request for two on a one-bet screen never reaches the floor: two is inside the band, so the rule that applies is that a stated number is used as given, and nothing in it answered to what the screen carries.
+- Three rules described that input and gave three answers. Used-as-given drew a second sketch, which is the restyle the validity rule rejects. The short-count rule drew the real ones and called the count short, which lands on the single sketch the floor exists to prevent and contradicts the one-bet rule's own "not a short count". The one-bet rule gave the one-bet reply. The short-count row was the one that actively misrouted, because one is fewer than two and its wording fits.
+- Used-as-given loses, and not on the floor's reasoning this time. It was never absolute: the short-count rule is already its exception, written for the screen that carries three when five were asked for. A one-bet screen is that same exception at the end of its range, where going short arrives at a number no rule here will print, so the bound ends in the one-bet reply rather than in a count.
+- So the one-bet reply answers any stated count from two to five, the same reply a stated one gets and the same one a request naming no number gets. Only the closing line moves with the request, and it never says the count is short: the screen carries one bet, not one of the number asked for.
+- Step 2 carries the generalisation, and three rows in the failure-modes table follow it - the stated-count row now carries the exception, the short-count row says where it stops, and the collision row covers every stated count instead of a single variant. The README's cap-and-floor bullet and the how-many FAQ answer carry it too. No count moved and neither end of the 2-to-5 band changed.
+
 ## [1.11.0] - 2026-10-20
 
 - New edge case: the user asks for a single variant and the screen carries exactly one genuine bet. Two rules describe that input and they give opposite answers. The band's floor says a request for one comes back as 2, and the failure-modes table said so flatly in its single-variant row. The one-bet rule added in 1.9.0 says a padded second sketch on such a screen is a restyle, so neither one nor two is legal. Nothing said which rule wins, and the floor is the one a reader meets first - it sits earlier in Step 2 and earlier in the table - so the likely reading was the wrong one.
