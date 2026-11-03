@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.13.0] - 2026-11-03
+
+- New edge case: a stated count above five on a screen that carries exactly one bet. The cap row sends a request for eight back to five, and the row 1.12.0 added covers a stated one and anything from two to five, so the two have to compose for this input to reach an answer at all and nothing said that they do. The cap row was also the only row in the failure-modes table with no one-bet exception, while both of its neighbours carry one.
+- The README had been promising the rule the skill did not carry. Its what-it-does bullet has said "that holds for any number you state, not just one" and closed with "whatever number you asked for", while the how-many FAQ answer and Step 2 both stopped at five, so the published text was more general than the skill behind it.
+- The answer is the one-bet reply, which is where composing the two rows lands. What the composition settles is what the reply leaves out: the cap is not announced. Its reason is that past five a reviewer stops comparing and starts skimming, which describes a set a one-bet screen does not produce, so stated here it is true of nothing in the reply. Announcing the cap also answers the number, when the closing line is that the number is not what is wrong - a capped five printed before the one bet names a count that was never going to be drawn, which is the move the stated-count rows already refuse.
+- So the one-bet reply absorbs the cap rather than taking a capped number from it. The cap still governs every screen carrying more than one bet, and with this the one-bet reply answers every stated count there is: one, two to five, above five, and a request naming none.
+- Step 2 carries the case, the cap row gains the one-bet exception its neighbours already had, a new failure-mode row covers the combined input, and the README's how-many FAQ answer and what-it-does bullet now say what the bullet was already claiming. No count moved and neither end of the 2-to-5 band changed.
+
 ## [1.12.0] - 2026-10-25
 
 - Closed the collision 1.11.0 resolved for a stated count of one, which was the same collision one step along for a stated count of two to five and no rule named it. 1.11.0 settled the floor against the one-bet rule. A request for two on a one-bet screen never reaches the floor: two is inside the band, so the rule that applies is that a stated number is used as given, and nothing in it answered to what the screen carries.
