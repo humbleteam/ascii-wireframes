@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.14.0] - 2026-11-08
+
+- Composed the cap row with the distance rule, which were silent about each other. The cap sends a request for eight back to five and says nothing about which five; the distance rule fills a short count with the hypotheses furthest apart but is keyed to a stated count below what the screen carries, and eight on a screen carrying seven is above it rather than below. The case the cap creates is the one that rule was written for, reached by a route neither names.
+- The gap had a cost: the obvious move after capping is to take the first five off the list, which is the move the distance rule already calls the most expensive. The nearest five are the pairs closest to being restyles of each other, so a capped set picked that way hands back less spread than the screen has while looking complete - and looking complete twice over, since the number printed was the cap's rather than the one that was asked for.
+- Step 2 now says the capped five are picked for distance, with the dropped directions named in one line if the user asks what is missing. The cap is announced here, unlike the one-bet case 1.13.0 settled: five is a count this screen can carry and the reply is drawing it, so the band's reason is true of what arrives.
+- Said where the pick does not come up. A screen carrying three answers a capped five the way it answers a stated five, with three sketches and the short-count line, because the short-count rule reads what the screen carries and not where the number came from.
+- The failure-modes cap row, the README's what-it-does bullet and the how-many FAQ answer carry the same point, so the table, the published text and `SKILL.md` agree.
+- No count moved. Neither end of the 2-to-5 band changed, the cap still bites at the same place, and the one-bet rows are untouched.
+
 ## [1.13.0] - 2026-11-03
 
 - New edge case: a stated count above five on a screen that carries exactly one bet. The cap row sends a request for eight back to five, and the row 1.12.0 added covers a stated one and anything from two to five, so the two have to compose for this input to reach an answer at all and nothing said that they do. The cap row was also the only row in the failure-modes table with no one-bet exception, while both of its neighbours carry one.
