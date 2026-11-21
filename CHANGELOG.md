@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.15.0] - 2026-11-21
+
+- New FAQ answer: why the sketches carry no rationale or citations. `SKILL.md`'s failure-modes table already declines a mid-sketch "why" and sends rationale to a design review once a direction is picked; the README never said so, so a reader met the refusal with no reason behind it. No rule changed and no count moved.
+
 ## [1.14.0] - 2026-11-08
 
 - Composed the cap row with the distance rule, which were silent about each other. The cap sends a request for eight back to five and says nothing about which five; the distance rule fills a short count with the hypotheses furthest apart but is keyed to a stated count below what the screen carries, and eight on a screen carrying seven is above it rather than below. The case the cap creates is the one that rule was written for, reached by a route neither names.

@@ -198,6 +198,9 @@ No, and asking directly does not change the answer. The skill knows two things a
 **What happens after I pick a variant?**
 The skill confirms your selection in one line, then points to the [html-mockup](https://github.com/humbleteam/html-mockup) skill for turning the chosen wireframe into a pixel-faithful HTML mockup. It does not generate HTML itself. It also tells you what to send along with the sketch, which matters more than it sounds: a wireframe abbreviates on purpose - two rows and a `...` for a list of any length, `v v v` for everything below the fold, `[IMG: photo]` for a region with no size - while html-mockup starts by writing a census of exact counts and states and then holds the render to it. An abbreviation handed over unmarked becomes the spec, and a feed of two items is what you get back. Palette, type, spacing and copy were never in the sketch either; with a reference screenshot html-mockup reads them off it, and without one it marks every guessed value in the census so you correct them in one pass.
 
+**Why don't the sketches come with a rationale or citations?**
+Because this is the phase where you pick a direction, not defend one. Ask for the "why" mid-sketch and the skill declines for now: rationale and heuristic citations belong in a design review, once a variant is chosen. Each sketch still states in one line what it bets on, which is enough to choose between them; the cited argument comes after, from [design-review](https://github.com/humbleteam/design-review), against the direction you actually kept.
+
 **Does this skill write any HTML or code?**
 No. It is scoped to the ASCII sketching phase only. If asked for HTML mid-sketch, it names html-mockup as the next step instead of producing code.
 
