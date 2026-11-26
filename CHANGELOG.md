@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.16.0] - 2026-11-26
+
+- New failure-mode row: a request naming several separate screens at once. The skill asks which screen goes first and takes the rest one at a time, since each screen has its own job and three screens of variants cannot be compared as one set. Steps of one flow that share a job stay one request.
+
 ## [1.15.0] - 2026-11-21
 
 - New FAQ answer: why the sketches carry no rationale or citations. `SKILL.md`'s failure-modes table already declines a mid-sketch "why" and sends rationale to a design review once a direction is picked; the README never said so, so a reader met the refusal with no reason behind it. No rule changed and no count moved.
